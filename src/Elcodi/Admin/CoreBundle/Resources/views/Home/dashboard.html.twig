@@ -1,0 +1,70 @@
+<div class="box-background">
+    <div class="grid">
+        <div class="col-1-2 pr-l">
+            {{ render(url('admin_metric_last_24_hours', {
+                'tracker': store_tracker,
+                'event': 'page_view'
+            })) }}
+        </div>
+        <div class="col-1-2">
+            <h2>{{ 'Sales'|trans }}</h2>
+            <div class="box-none pa-n">
+                <canvas height="200" data-tc-modules="charts" data-tc-type="bar" data-tc-colors="5b90bf" data-tc-labels-x="[January,February,March,June,July]">
+                    <input name="Sales" type="hidden" value="[60,90,30,70,40]" />
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-1-3">
+            <h2>{{ 'Top Sellers'|trans }}</h2>
+            <table class="table">
+                <thead class="d-n">
+                <tr>
+                    <th>#</th>
+                    <th>Item</th>
+                    <th>Image</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td class="w-60"><a href="#">Product name</a></td>
+                    <td class="ta-c"><img src="/images/18/resize/100/100/4.jpg" width="60" class="thumbnail"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td class="w-60"><a href="#">Product name</a></td>
+                    <td class="ta-c"><img src="/images/18/resize/100/100/4.jpg" width="60" class="thumbnail"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td class="w-60"><a href="#">Product name</a></td>
+                    <td class="ta-c"><img src="/images/18/resize/100/100/4.jpg" width="60" class="thumbnail"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-1-3">
+            <div class="box-none pa-n ta-c">
+                <h2>{{ 'Cart conversion'|trans }}</h2>
+                <canvas height="100" data-tc-modules="charts" data-tc-type="doughnut" data-tc-colors="[b55151,5b90bf,b48ead,96c47f,82b2af]">
+                    <input name="Cart view" type="hidden" value="315" />
+                    <input name="Billing/shipping" type="hidden" value="150" />
+                    <input name="Payment" type="hidden" value="70" />
+                    <input name="Checkout" type="hidden" value="45" />
+                </canvas>
+            </div>
+        </div>
+        <div class="col-1-3">
+            <div class="box-none pa-n ta-c">
+                <h2>{{ 'Traffic source'|trans }}</h2>
+                <canvas height="100" data-tc-modules="charts" data-tc-type="pie" data-tc-colors="[96c47f,b55151,5b90bf,b48ead,96c47f,82b2af]">
+                    <input name="Direct" type="hidden" value="35" />
+                    <input name="Search Engines" type="hidden" value="150" />
+                    <input name="Referals" type="hidden" value="70" />
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@
 
 {% block content_title %}Welcome!{% endblock content_title %}
 
-{% block breadcrumb %}<h1>Welcome!</h1>{% endblock %}
+{% block breadcrumb %}<h2><i class="icon-home"></i> {{ 'Dashboard' }}</h2>{% endblock %}
 
 {% block header_actions %}
     {#
@@ -13,11 +13,47 @@
 {% endblock %}
 
 {% block content %}
+    <nav class="navigation-sub dashboard-tabs">
+        <ul>
+            <li class="active">
+                <a title="tab 1" href="#tab1">
+                    <span class='dashboard-tabs-range'>{{ 'Today'|trans }}</span>
+                    <span class='dashboard-tabs-amount'>10€</span>
+                    <span class='dashboard-tabs-orders'>1 order</span>
+                </a>
+            </li>
+            <li>
+                <a title="tab 2" href="#tab2">
+                    <span class='dashboard-tabs-range'>{{ 'Yesterday'|trans }}</span>
+                    <span class='dashboard-tabs-amount'>30€</span>
+                    <span class='dashboard-tabs-orders'>2 orders</span>
+                </a>
+            </li>
+            <li>
+                <a title="tab 3" href="#tab3">
+                    <span class='dashboard-tabs-range'>{{ 'Last 7 days'|trans }}</span>
+                    <span class='dashboard-tabs-amount'>30€</span>
+                    <span class='dashboard-tabs-orders'>2 orders</span>
+                </a>
+            </li>
+            <li>
+                <a title="tab 4" href="#tab4">
+                    <span class='dashboard-tabs-range'>{{ 'Last 30 days'|trans }}</span>
+                    <span class='dashboard-tabs-amount'>30€</span>
+                    <span class='dashboard-tabs-orders'>2 orders</span>
+                </a>
+            </li>
+            <li>
+                <a title="tab 4" href="#tab4">
+                    <span class='dashboard-tabs-range'>{{ 'Last 90 days'|trans }}</span>
+                    <span class='dashboard-tabs-amount'>30€</span>
+                    <span class='dashboard-tabs-orders'>2 orders</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+        {% include '@AdminCore/Home/dashboard.html.twig' %}
 
-    {{ render(url('admin_metric_last_24_hours', {
-        'tracker': store_tracker,
-        'event': 'page_view'
-    })) }}
 
     {#
 
